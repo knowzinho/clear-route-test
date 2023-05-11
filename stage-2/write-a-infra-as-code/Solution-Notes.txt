@@ -1,0 +1,9 @@
+In this terraform example, the infrastructure to be deployed using AWS consists of Elastic Container Service(ECS), Application Load Balancer(ALB), Route53, DynamoDB, S3 and IAM.
+
+The S3 bucket was created manually to store the state file for the infrastructure. DynamoDB is used to keep track and lock the terraform lock file in order to avoid multiple users performing plan/apply at the same time.
+
+An ECS cluster is created together with a task definition and a service that deploys 2 instances using FARGATE. They are set with the Application Load Balancer to distribute the load between the instances.
+
+Route53 is also deployed to access the nginx application deployed with ECS.
+
+Lastly, IAM roles are also deployed accordingly.
